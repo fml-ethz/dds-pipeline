@@ -1,0 +1,1 @@
+Command: /scripts/decode_simple.sh ./DemoData/MySingleExperiment/R1.fq.gz --N=36 --K=32 --nuss=12 --numblock=1 --n=1000 --k=715

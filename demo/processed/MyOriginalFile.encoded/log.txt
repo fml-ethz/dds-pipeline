@@ -1,0 +1,25 @@
+fieldpower: lookup tables generated.. 
+fieldpower: lookup tables generated.. 
+--------------------------------
+redundancy outer code: 39.8601%
+redundancy inner code: 12.5%
+--------------------------------
+start encoding..
+infile:  ./DemoData/MyOriginalFile
+outfile: ./DemoData/MyOriginalFile.encoded/sequences.txt
+Filesize in Byte: 15000
+encode block 0
+	 encode part  0
+	 encode part  1
+	 encode part  2
+	 encode part  3
+	 encode part  4
+	 encode part  5
+	 encode part  6
+	 encode part  7
+	 encode part  8
+	 encode part  9
+	 encode part  10
+	 encode part  11
+encoded block 0 of 1
+encoded 15000 Bytes to 1 blocks, resulting in 1000 DNA segments of length 108 each.

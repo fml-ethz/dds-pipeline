@@ -1,0 +1,1 @@
+Command: /scripts/decode_full.sh ./DemoData/MyMultipleExperiments/BatchExperiment1//R1.fq.gz ./DemoData/MyMultipleExperiments/BatchExperiment1//R2.fq.gz 108 --N=36 --K=32 --nuss=12 --numblock=1 --n=1000 --k=715

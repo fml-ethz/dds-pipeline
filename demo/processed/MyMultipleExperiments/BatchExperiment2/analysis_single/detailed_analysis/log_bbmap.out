@@ -1,0 +1,83 @@
+java -ea -Xmx16g -Xms16g -cp /root/.local/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 -Xmx16g in=stdin.fq t=4 ref=/data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_single/design_files.fasta int=f local=f nodisk vslow k=8 maxindel=200 minratio=0.1 mappedonly out=/data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_single/mapped.bam scafstats=/data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_single/analysis/coverage.tsv
+java -ea -Xmx16g -Xms16g -cp /root/.local/bin/bbmap/current/ jgi.BBDuk -Xmx16g in1=/data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_single/R1.fq.gz samplerate=1.0 out=stdout.fq t=4
+Executing jgi.BBDuk [-Xmx16g, in1=/data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_single/R1.fq.gz, samplerate=1.0, out=stdout.fq, t=4]
+Version 38.99
+
+Set threads to 4
+Executing align2.BBMap [tipsearch=150, minhits=1, minratio=0.25, rescuemismatches=50, rescuedist=3000, build=1, overwrite=true, fastareadlen=500, -Xmx16g, in=stdin.fq, t=4, ref=/data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_single/design_files.fasta, int=f, local=f, nodisk, k=8, maxindel=200, minratio=0.1, mappedonly, out=/data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_single/mapped.bam, scafstats=/data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_single/analysis/coverage.tsv]
+Version 38.99
+
+Set MINIMUM_ALIGNMENT_SCORE_RATIO to 0.250
+Set threads to 4
+Set INTERLEAVED to false
+Set MINIMUM_ALIGNMENT_SCORE_RATIO to 0.100
+Set OUTPUT_MAPPED_ONLY to true
+Scaffold statistics will be written to /data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_single/analysis/coverage.tsv
+0.011 seconds.
+Initial:
+Memory: max=17179m, total=17179m, free=17140m, used=39m
+
+Retaining first best site only for ambiguous mappings.
+Executing dna.FastaToChromArrays2 [/data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_single/design_files.fasta, 1, writeinthread=false, genscaffoldinfo=true, retain, waitforwriting=false, gz=true, maxlen=536670912, writechroms=false, minscaf=1, midpad=300, startpad=8000, stoppad=8000, nodisk=true]
+
+Set genScaffoldInfo=true
+Input is being processed as unpaired
+Started output streams:	0.008 seconds.
+Set genome to 1
+
+Loaded Reference:	0.002 seconds.
+Loading index for chunk 1-1, build 1
+Indexing threads started for block 0-1
+Indexing threads finished for block 0-1
+Generated Index:	0.027 seconds.
+Analyzed Index:   	0.007 seconds.
+Could not find samtools.
+Started output stream:	0.014 seconds.
+Creating scaffold statistics table:   	0.001 seconds.
+Cleared Memory:    	0.126 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 4 mapping threads.
+Processing time:   		3.598 seconds.
+
+Input:                  	30000 reads 		4500000 bases.
+Total Removed:          	0 reads (0.00%) 	0 bases (0.00%)
+Result:                 	30000 reads (100.00%) 	4500000 bases (100.00%)
+
+Time:                         	3.607 seconds.
+Reads Processed:       30000 	8.32k reads/sec
+Bases Processed:       4500k 	1.25m bases/sec
+Detecting finished threads: 0, 1, 2, 3
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	200
+Minimum Score Ratio:  	0.1
+Mapping Mode:         	normal
+Reads Used:           	30000	(4500000 bases)
+
+Mapping:          	3.653 seconds.
+Reads/sec:       	8212.82
+kBases/sec:      	1231.92
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 96.5033% 	    28951 	 96.5033% 	     4342650
+unambiguous:     	 96.5033% 	    28951 	 96.5033% 	     4342650
+ambiguous:       	  0.0000% 	        0 	  0.0000% 	           0
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.0000% 	        0 	  0.0000% 	           0
+semiperfect site:	 34.8167% 	    10445 	 34.8167% 	     1566750
+
+Match Rate:      	      NA 	       NA 	 70.3901% 	     3076593
+Error Rate:      	 63.9218% 	    18506 	  1.0742% 	       46950
+Sub Rate:        	 40.6549% 	    11770 	  0.4279% 	       18702
+Del Rate:        	 41.9364% 	    12141 	  0.6435% 	       28126
+Ins Rate:        	  0.1520% 	       44 	  0.0028% 	         122
+N Rate:          	100.0000% 	    28951 	 28.5357% 	     1247233
+
+Total time:     	3.966 seconds.

@@ -1,0 +1,171 @@
+[07/09/25 12:28:37] INFO     Using parameters:                                               analysis.py:156
+                             Namespace(folderpath='./DemoData/MySingleExperiment/analysis_si                
+                             ngle', paired=False, force=False, local=False,                                 
+                             readmetrics=True, breakmetrics=False, cut_adapters=False,                      
+                             map_local=False, categorize_by_direction=False,                                
+                             config='standard', n_workers=4, align_subsampling=1.0,                         
+                             n_reads=2000000, min_match_similarity=0.7,                                     
+                             medium_match_similarity=0.85, min_align_length=20,                             
+                             trim_ends=[], trim_adapter='AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT')                
+                    WARNING  Generating the mapping file, as it is not present.               analysis.py:33
+                    WARNING  Using only forward reads for mapping.                            analysis.py:57
+                    INFO     Running mapping with bbmap: ~/.local/bin/bbmap/bbduk.sh -Xmx16g  analysis.py:89
+                             in1=/data/DemoData/MySingleExperiment/analysis_single/R1.fq.gz                 
+                             samplerate=1.0 out=stdout.fq t=4 | ~/.local/bin/bbmap/bbmap.sh                 
+                             -Xmx16g in=stdin.fq t=4                                                        
+                             ref=/data/DemoData/MySingleExperiment/analysis_single/design_fil               
+                             es.fasta int=f local=f nodisk vslow k=8 maxindel=200                           
+                             minratio=0.1 mappedonly                                                        
+                             out=/data/DemoData/MySingleExperiment/analysis_single/mapped.bam               
+                             scafstats=/data/DemoData/MySingleExperiment/analysis_single/anal               
+                             ysis/coverage.tsv                                                              
+java -ea -Xmx16g -Xms16g -cp /root/.local/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 -Xmx16g in=stdin.fq t=4 ref=/data/DemoData/MySingleExperiment/analysis_single/design_files.fasta int=f local=f nodisk vslow k=8 maxindel=200 minratio=0.1 mappedonly out=/data/DemoData/MySingleExperiment/analysis_single/mapped.bam scafstats=/data/DemoData/MySingleExperiment/analysis_single/analysis/coverage.tsv
+java -ea -Xmx16g -Xms16g -cp /root/.local/bin/bbmap/current/ jgi.BBDuk -Xmx16g in1=/data/DemoData/MySingleExperiment/analysis_single/R1.fq.gz samplerate=1.0 out=stdout.fq t=4
+Executing jgi.BBDuk [-Xmx16g, in1=/data/DemoData/MySingleExperiment/analysis_single/R1.fq.gz, samplerate=1.0, out=stdout.fq, t=4]
+Version 38.99
+
+Set threads to 4
+Executing align2.BBMap [tipsearch=150, minhits=1, minratio=0.25, rescuemismatches=50, rescuedist=3000, build=1, overwrite=true, fastareadlen=500, -Xmx16g, in=stdin.fq, t=4, ref=/data/DemoData/MySingleExperiment/analysis_single/design_files.fasta, int=f, local=f, nodisk, k=8, maxindel=200, minratio=0.1, mappedonly, out=/data/DemoData/MySingleExperiment/analysis_single/mapped.bam, scafstats=/data/DemoData/MySingleExperiment/analysis_single/analysis/coverage.tsv]
+Version 38.99
+
+Set MINIMUM_ALIGNMENT_SCORE_RATIO to 0.250
+Set threads to 4
+Set INTERLEAVED to false
+Set MINIMUM_ALIGNMENT_SCORE_RATIO to 0.100
+Set OUTPUT_MAPPED_ONLY to true
+Scaffold statistics will be written to /data/DemoData/MySingleExperiment/analysis_single/analysis/coverage.tsv
+Retaining first best site only for ambiguous mappings.
+Executing dna.FastaToChromArrays2 [/data/DemoData/MySingleExperiment/analysis_single/design_files.fasta, 1, writeinthread=false, genscaffoldinfo=true, retain, waitforwriting=false, gz=true, maxlen=536670912, writechroms=false, minscaf=1, midpad=300, startpad=8000, stoppad=8000, nodisk=true]
+
+Set genScaffoldInfo=true
+0.041 seconds.
+Initial:
+Memory: max=17179m, total=17179m, free=17140m, used=39m
+
+Input is being processed as unpaired
+Started output streams:	0.166 seconds.
+Set genome to 1
+
+Loaded Reference:	0.003 seconds.
+Loading index for chunk 1-1, build 1
+Indexing threads started for block 0-1
+Indexing threads finished for block 0-1
+Generated Index:	0.036 seconds.
+Analyzed Index:   	0.037 seconds.
+Could not find samtools.
+Started output stream:	0.173 seconds.
+Creating scaffold statistics table:   	0.016 seconds.
+Cleared Memory:    	0.142 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 4 mapping threads.
+Processing time:   		2.139 seconds.
+
+Input:                  	30000 reads 		4500000 bases.
+Total Removed:          	0 reads (0.00%) 	0 bases (0.00%)
+Result:                 	30000 reads (100.00%) 	4500000 bases (100.00%)
+
+Time:                         	2.306 seconds.
+Reads Processed:       30000 	13.01k reads/sec
+Bases Processed:       4500k 	1.95m bases/sec
+Detecting finished threads: 0, 1, 2, 3
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	200
+Minimum Score Ratio:  	0.1
+Mapping Mode:         	normal
+Reads Used:           	30000	(4500000 bases)
+
+Mapping:          	1.806 seconds.
+Reads/sec:       	16611.96
+kBases/sec:      	2491.79
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 98.0567% 	    29417 	 98.0567% 	     4412550
+unambiguous:     	 98.0567% 	    29417 	 98.0567% 	     4412550
+ambiguous:       	  0.0000% 	        0 	  0.0000% 	           0
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.0000% 	        0 	  0.0000% 	           0
+semiperfect site:	 62.5000% 	    18750 	 62.5000% 	     2812500
+
+Match Rate:      	      NA 	       NA 	 71.6621% 	     3163184
+Error Rate:      	 36.2613% 	    10667 	  0.3117% 	       13757
+Sub Rate:        	 34.0517% 	    10017 	  0.2783% 	       12283
+Del Rate:        	  3.2872% 	      967 	  0.0334% 	        1474
+Ins Rate:        	  0.0000% 	        0 	  0.0000% 	           0
+N Rate:          	100.0000% 	    29417 	 28.0262% 	     1237083
+
+Total time:     	3.500 seconds.
+
+[07/09/25 12:28:42] INFO     Finished mapping with bbmap after 4s.                           analysis.py:104
+                    INFO     Running error analysis on                                     errormapper.py:14
+                             /data/DemoData/MySingleExperiment/analysis_single/mapped.bam                   
+                             with reference                                                                 
+                             /data/DemoData/MySingleExperiment/analysis_single/design_file                  
+                             s.fasta.                                                                       
+                    INFO     Generated 1000 reference sequences from                            fileio.py:60
+                             /data/DemoData/MySingleExperiment/analysis_single/design_files.fas             
+                             ta.                                                                            
+                    INFO     No duplicates in reference sequence list.                          fileio.py:83
+                    INFO     Reverse complemented the 1000 reference sequences.                 fileio.py:69
+                    INFO     Categorizing reads, using min. match similarity of 0.7, and     alignment.py:55
+                             min. medium match similarity of 0.85.                                          
+                    WARNING  Aligning reads in mode global.                                  alignment.py:15
+                    INFO     Reading input file                                                 fileio.py:25
+                             /data/DemoData/MySingleExperiment/analysis_single/mapped.bam to                
+                             determine total number of reads.                                               
+                    INFO     Randomly selecting 29417 reads from 29417 total reads.             fileio.py:28
+                    INFO     Using input file                                                   fileio.py:16
+                             /data/DemoData/MySingleExperiment/analysis_single/mapped.bam for               
+                             read generation.                                                               
+[07/09/25 12:28:43] INFO     Read 0/29417 (0.0%) reads.                                         fileio.py:33
+/usr/local/lib/python3.10/site-packages/Bio/SeqRecord.py:228: BiopythonDeprecationWarning: Using a string as the sequence is deprecated and will raise a TypeError in future. It has been converted to a Seq object.
+  warnings.warn(
+                    INFO     Read 5883/29417 (20.0%) reads.                                     fileio.py:33
+                    INFO     Read 11766/29417 (40.0%) reads.                                    fileio.py:33
+                    INFO     Read 17649/29417 (60.0%) reads.                                    fileio.py:33
+                    INFO     Read 23532/29417 (80.0%) reads.                                    fileio.py:33
+                    INFO     Read 29415/29417 (100.0%) reads.                                   fileio.py:33
+                    INFO     Aligned 29417 reads, thereof 29417 (100.00%) forward reads, 0   alignment.py:45
+                             (0.00%) reverse reads, and 0 (0.00%) skipped reads.                            
+                    INFO     Aligned 29417 forward reads, thereof 29417 (100.00%) from read  alignment.py:47
+                             1, and 0 (0.00%) from read 2.                                                  
+                    INFO     Categorized 29417 reads into 29417 matches (100.00%), 0         alignment.py:88
+                             borderline matches (0.00%), and 0 unknowns (0.00%).                            
+                    INFO     Wrote error maps to files                                         fileio.py:154
+                             /data/DemoData/MySingleExperiment/analysis_single/analysis/fw.glo              
+                             bal.mapped_high.errormap,                                                      
+                             /data/DemoData/MySingleExperiment/analysis_single/analysis/rv.glo              
+                             bal.mapped_high.errormap, with a limit of 1000.                                
+[07/09/25 12:28:45] WARNING  Zero bases logged for file                                       mapping.py:281
+                             /data/DemoData/MySingleExperiment/analysis_single/analysis/rv.gl               
+                             obal.mapped_high.stats                                                         
+                    INFO     Wrote error statistics to files                                   fileio.py:131
+                             /data/DemoData/MySingleExperiment/analysis_single/analysis/fw.glo              
+                             bal.mapped_high.stats,                                                         
+                             /data/DemoData/MySingleExperiment/analysis_single/analysis/rv.glo              
+                             bal.mapped_high.stats.                                                         
+                    INFO     No data to write to error maps                                    fileio.py:138
+                             /data/DemoData/MySingleExperiment/analysis_single/analysis/fw.glo              
+                             bal.mapped_low.errormap,                                                       
+                             /data/DemoData/MySingleExperiment/analysis_single/analysis/rv.glo              
+                             bal.mapped_low.errormap.                                                       
+                    INFO     No data to write to error stats [].                               fileio.py:114
+                    INFO     No data to write to error maps                                    fileio.py:138
+                             /data/DemoData/MySingleExperiment/analysis_single/analysis/fw.glo              
+                             bal.unmapped.errormap,                                                         
+                             /data/DemoData/MySingleExperiment/analysis_single/analysis/rv.glo              
+                             bal.unmapped.errormap.                                                         
+                    INFO     No data to write to error stats [].                               fileio.py:114
+                    INFO     Saving read metrics for                                       errormapper.py:33
+                             /data/DemoData/MySingleExperiment/analysis_single/mapped.bam.                  
+                    INFO     Wrote readmetrics to file                                         fileio.py:199
+                             /data/DemoData/MySingleExperiment/analysis_single/analysis/global              
+                             .readmetrics.csv.                                                              
+                    INFO     Finished error analysis after 8s.                                analysis.py:46

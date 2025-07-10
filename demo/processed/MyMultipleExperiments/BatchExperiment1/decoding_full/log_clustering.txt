@@ -1,0 +1,43 @@
+================================================================
+Program: CD-HIT, V4.8.1 (+OpenMP), Jul 07 2025, 14:18:55
+Command: /cdhit/cd-hit-est -i
+         ./DemoData/MyMultipleExperiments/BatchExperiment1/decoding_full/merged.fq.gz.fasta
+         -o
+         ./DemoData/MyMultipleExperiments/BatchExperiment1/decoding_full/clusters.fasta
+         -sf 1 -bak 1 -c 0.85 -n 6
+
+Started: Wed Jul  9 08:11:10 2025
+================================================================
+                            Output                              
+----------------------------------------------------------------
+total seq: 30000
+longest and shortest : 108 and 95
+Total letters: 3238337
+Sequences have been sorted
+
+Approximated minimal memory consumption:
+Sequence        : 7M
+Buffer          : 1 X 12M = 12M
+Table           : 1 X 0M = 0M
+Miscellaneous   : 0M
+Total           : 20M
+
+Table limit with the given memory limit:
+Max number of representatives: 3745803
+Max number of word counting entries: 97441460
+
+comparing sequences from          0  to      30000
+....................    10000  finished        357  clusters
+....................    20000  finished        700  clusters
+....................    30000  finished        998  clusters
+
+    30000  finished        998  clusters
+
+Approximated maximum memory consumption: 21M
+writing new database
+writing clustering information
+program completed !
+
+Total CPU time 0.57
+Done. Wrote 998 consensus sequences from 30000 individual sequences to DemoData/MyMultipleExperiments/BatchExperiment1/decoding_full/clusters.
+Time elapsed: 6.18 seconds.

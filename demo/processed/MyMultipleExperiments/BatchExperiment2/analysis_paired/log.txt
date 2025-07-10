@@ -1,0 +1,207 @@
+[07/09/25 08:55:53] INFO     Using parameters:                                               analysis.py:156
+                             Namespace(folderpath='./DemoData/MyMultipleExperiments/BatchExp                
+                             eriment2/analysis_paired', paired=True, force=False,                           
+                             local=False, readmetrics=True, breakmetrics=False,                             
+                             cut_adapters=False, map_local=False,                                           
+                             categorize_by_direction=False, config='standard', n_workers=4,                 
+                             align_subsampling=1.0, n_reads=2000000,                                        
+                             min_match_similarity=0.7, medium_match_similarity=0.85,                        
+                             min_align_length=20, trim_ends=[],                                             
+                             trim_adapter='AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT')                              
+                    WARNING  Generating the mapping file, as it is not present.               analysis.py:33
+                    WARNING  Using paired reads for mapping.                                  analysis.py:53
+                    INFO     Running mapping with bbmap: ~/.local/bin/bbmap/bbduk.sh -Xmx16g  analysis.py:89
+                             in1=/data/DemoData/MyMultipleExperiments/BatchExperiment2/analys               
+                             is_paired/R1.fq.gz                                                             
+                             in2=/data/DemoData/MyMultipleExperiments/BatchExperiment2/analys               
+                             is_paired/R2.fq.gz samplerate=1.0 out=stdout.fq t=4 |                          
+                             ~/.local/bin/bbmap/bbmap.sh -Xmx16g in=stdin.fq t=4                            
+                             ref=/data/DemoData/MyMultipleExperiments/BatchExperiment2/analys               
+                             is_paired/design_files.fasta int=t local=f nodisk vslow k=8                    
+                             maxindel=200 minratio=0.1 mappedonly                                           
+                             out=/data/DemoData/MyMultipleExperiments/BatchExperiment2/analys               
+                             is_paired/mapped.bam                                                           
+                             scafstats=/data/DemoData/MyMultipleExperiments/BatchExperiment2/               
+                             analysis_paired/analysis/coverage.tsv                                          
+java -ea -Xmx16g -Xms16g -cp /root/.local/bin/bbmap/current/ jgi.BBDuk -Xmx16g in1=/data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_paired/R1.fq.gz in2=/data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_paired/R2.fq.gz samplerate=1.0 out=stdout.fq t=4
+java -ea -Xmx16g -Xms16g -cp /root/.local/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 -Xmx16g in=stdin.fq t=4 ref=/data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_paired/design_files.fasta int=t local=f nodisk vslow k=8 maxindel=200 minratio=0.1 mappedonly out=/data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_paired/mapped.bam scafstats=/data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_paired/analysis/coverage.tsv
+Executing jgi.BBDuk [-Xmx16g, in1=/data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_paired/R1.fq.gz, in2=/data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_paired/R2.fq.gz, samplerate=1.0, out=stdout.fq, t=4]
+Version 38.99
+
+Set threads to 4
+Executing align2.BBMap [tipsearch=150, minhits=1, minratio=0.25, rescuemismatches=50, rescuedist=3000, build=1, overwrite=true, fastareadlen=500, -Xmx16g, in=stdin.fq, t=4, ref=/data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_paired/design_files.fasta, int=t, local=f, nodisk, k=8, maxindel=200, minratio=0.1, mappedonly, out=/data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_paired/mapped.bam, scafstats=/data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_paired/analysis/coverage.tsv]
+Version 38.99
+
+Set MINIMUM_ALIGNMENT_SCORE_RATIO to 0.250
+Set threads to 4
+Set INTERLEAVED to true
+Set MINIMUM_ALIGNMENT_SCORE_RATIO to 0.100
+Set OUTPUT_MAPPED_ONLY to true
+Scaffold statistics will be written to /data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_paired/analysis/coverage.tsv
+Retaining first best site only for ambiguous mappings.
+Executing dna.FastaToChromArrays2 [/data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_paired/design_files.fasta, 1, writeinthread=false, genscaffoldinfo=true, retain, waitforwriting=false, gz=true, maxlen=536670912, writechroms=false, minscaf=1, midpad=300, startpad=8000, stoppad=8000, nodisk=true]
+
+Set genScaffoldInfo=true
+0.009 seconds.
+Initial:
+Memory: max=17179m, total=17179m, free=17142m, used=37m
+
+Input is being processed as paired
+Started output streams:	0.013 seconds.
+Set genome to 1
+
+Loaded Reference:	0.002 seconds.
+Loading index for chunk 1-1, build 1
+Indexing threads started for block 0-1
+Indexing threads finished for block 0-1
+Generated Index:	0.035 seconds.
+Analyzed Index:   	0.007 seconds.
+Could not find samtools.
+Started output stream:	0.014 seconds.
+Creating scaffold statistics table:   	0.001 seconds.
+Cleared Memory:    	0.127 seconds.
+Processing reads in paired-ended mode.
+Started read stream.
+Started 4 mapping threads.
+Processing time:   		7.032 seconds.
+
+Input:                  	60000 reads 		9000000 bases.
+Total Removed:          	0 reads (0.00%) 	0 bases (0.00%)
+Result:                 	60000 reads (100.00%) 	9000000 bases (100.00%)
+
+Time:                         	7.046 seconds.
+Reads Processed:       60000 	8.52k reads/sec
+Bases Processed:       9000k 	1.28m bases/sec
+Detecting finished threads: 0, 1, 2, 3
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	200
+Minimum Score Ratio:  	0.1
+Mapping Mode:         	normal
+Reads Used:           	60000	(9000000 bases)
+
+Mapping:          	7.328 seconds.
+Reads/sec:       	8187.57
+kBases/sec:      	1228.14
+
+
+Pairing data:   	pct pairs	num pairs 	pct bases	   num bases
+
+mated pairs:     	 96.3067% 	    28892 	 96.3067% 	     8667600
+bad pairs:       	  0.0000% 	        0 	  0.0000% 	           0
+insert size avg: 	  193.17
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 96.5467% 	    28964 	 96.5467% 	     4344600
+unambiguous:     	 96.5467% 	    28964 	 96.5467% 	     4344600
+ambiguous:       	  0.0000% 	        0 	  0.0000% 	           0
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.0000% 	        0 	  0.0000% 	           0
+semiperfect site:	 34.8367% 	    10451 	 34.8367% 	     1567650
+rescued:         	  0.5633% 	      169
+
+Match Rate:      	      NA 	       NA 	 70.3906% 	     3077987
+Error Rate:      	 63.9173% 	    18513 	  1.0739% 	       46960
+Sub Rate:        	 40.6608% 	    11777 	  0.4279% 	       18712
+Del Rate:        	 41.9176% 	    12141 	  0.6432% 	       28126
+Ins Rate:        	  0.1519% 	       44 	  0.0028% 	         122
+N Rate:          	100.0000% 	    28964 	 28.5355% 	     1247779
+
+
+Read 2 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 99.5767% 	    29873 	 99.5767% 	     4480950
+unambiguous:     	 99.5767% 	    29873 	 99.5767% 	     4480950
+ambiguous:       	  0.0000% 	        0 	  0.0000% 	           0
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.0000% 	        0 	  0.0000% 	           0
+semiperfect site:	 31.2167% 	     9365 	 31.2167% 	     1404750
+rescued:         	  4.9667% 	     1490
+
+Match Rate:      	      NA 	       NA 	 70.3172% 	     3170889
+Error Rate:      	 68.6506% 	    20508 	  1.1916% 	       53735
+Sub Rate:        	 48.9405% 	    14620 	  0.5595% 	       25229
+Del Rate:        	 41.7601% 	    12475 	  0.6310% 	       28456
+Ins Rate:        	  0.1272% 	       38 	  0.0011% 	          50
+N Rate:          	100.0000% 	    29873 	 28.4912% 	     1284782
+
+Total time:     	7.649 seconds.
+
+[07/09/25 08:56:01] INFO     Finished mapping with bbmap after 7s.                           analysis.py:104
+                    INFO     Running error analysis on                                     errormapper.py:14
+                             /data/DemoData/MyMultipleExperiments/BatchExperiment2/analysi                  
+                             s_paired/mapped.bam with reference                                             
+                             /data/DemoData/MyMultipleExperiments/BatchExperiment2/analysi                  
+                             s_paired/design_files.fasta.                                                   
+                    INFO     Generated 1000 reference sequences from                            fileio.py:60
+                             /data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_pai             
+                             red/design_files.fasta.                                                        
+                    INFO     No duplicates in reference sequence list.                          fileio.py:83
+                    INFO     Reverse complemented the 1000 reference sequences.                 fileio.py:69
+                    INFO     Categorizing reads, using min. match similarity of 0.7, and     alignment.py:55
+                             min. medium match similarity of 0.85.                                          
+                    WARNING  Aligning reads in mode global.                                  alignment.py:15
+                    INFO     Reading input file                                                 fileio.py:25
+                             /data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_pai             
+                             red/mapped.bam to determine total number of reads.                             
+                    INFO     Randomly selecting 59890 reads from 59890 total reads.             fileio.py:28
+                    INFO     Using input file                                                   fileio.py:16
+                             /data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_pai             
+                             red/mapped.bam for read generation.                                            
+                    INFO     Read 0/59890 (0.0%) reads.                                         fileio.py:33
+/usr/local/lib/python3.10/site-packages/Bio/SeqRecord.py:228: BiopythonDeprecationWarning: Using a string as the sequence is deprecated and will raise a TypeError in future. It has been converted to a Seq object.
+  warnings.warn(
+                    INFO     Read 11978/59890 (20.0%) reads.                                    fileio.py:33
+                    INFO     Read 23956/59890 (40.0%) reads.                                    fileio.py:33
+                    INFO     Read 35934/59890 (60.0%) reads.                                    fileio.py:33
+[07/09/25 08:56:02] INFO     Read 47912/59890 (80.0%) reads.                                    fileio.py:33
+                    INFO     Aligned 58837 reads, thereof 28964 (49.23%) forward reads,      alignment.py:45
+                             29873 (50.77%) reverse reads, and 0 (0.00%) skipped reads.                     
+                    INFO     Aligned 28964 forward reads, thereof 28964 (100.00%) from read  alignment.py:47
+                             1, and 0 (0.00%) from read 2.                                                  
+                    INFO     Aligned 29873 reverse reads, thereof 0 (0.00%) from read 1, and alignment.py:48
+                             29873 (100.00%) from read 2.                                                   
+                    INFO     Categorized 58837 reads into 58813 matches (99.96%), 24         alignment.py:88
+                             borderline matches (0.04%), and 0 unknowns (0.00%).                            
+                    INFO     Wrote error maps to files                                         fileio.py:154
+                             /data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_pa              
+                             ired/analysis/fw.global.mapped_high.errormap,                                  
+                             /data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_pa              
+                             ired/analysis/rv.global.mapped_high.errormap, with a limit of                  
+                             1000.                                                                          
+[07/09/25 08:56:06] INFO     Wrote error statistics to files                                   fileio.py:131
+                             /data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_pa              
+                             ired/analysis/fw.global.mapped_high.stats,                                     
+                             /data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_pa              
+                             ired/analysis/rv.global.mapped_high.stats.                                     
+                    INFO     Wrote error maps to files                                         fileio.py:154
+                             /data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_pa              
+                             ired/analysis/fw.global.mapped_low.errormap,                                   
+                             /data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_pa              
+                             ired/analysis/rv.global.mapped_low.errormap, with a limit of                   
+                             1000.                                                                          
+                    INFO     Wrote error statistics to files                                   fileio.py:131
+                             /data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_pa              
+                             ired/analysis/fw.global.mapped_low.stats,                                      
+                             /data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_pa              
+                             ired/analysis/rv.global.mapped_low.stats.                                      
+                    INFO     No data to write to error maps                                    fileio.py:138
+                             /data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_pa              
+                             ired/analysis/fw.global.unmapped.errormap,                                     
+                             /data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_pa              
+                             ired/analysis/rv.global.unmapped.errormap.                                     
+                    INFO     No data to write to error stats [].                               fileio.py:114
+                    INFO     Saving read metrics for                                       errormapper.py:33
+                             /data/DemoData/MyMultipleExperiments/BatchExperiment2/analysi                  
+                             s_paired/mapped.bam.                                                           
+[07/09/25 08:56:07] INFO     Wrote readmetrics to file                                         fileio.py:199
+                             /data/DemoData/MyMultipleExperiments/BatchExperiment2/analysis_pa              
+                             ired/analysis/global.readmetrics.csv.                                          
+                    INFO     Finished error analysis after 14s.                               analysis.py:46

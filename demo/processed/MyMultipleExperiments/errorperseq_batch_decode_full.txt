@@ -1,0 +1,2 @@
+BatchExperiment1,0.0150301
+BatchExperiment2,0.222809

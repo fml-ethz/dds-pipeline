@@ -1,0 +1,110 @@
+java -ea -Xmx16g -Xms16g -cp /root/.local/bin/bbmap/current/ jgi.BBDuk -Xmx16g in1=/data/DemoData/MyMultipleExperiments/BatchExperiment1/analysis_paired/R1.fq.gz in2=/data/DemoData/MyMultipleExperiments/BatchExperiment1/analysis_paired/R2.fq.gz samplerate=1.0 out=stdout.fq t=4
+java -ea -Xmx16g -Xms16g -cp /root/.local/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 -Xmx16g in=stdin.fq t=4 ref=/data/DemoData/MyMultipleExperiments/BatchExperiment1/analysis_paired/design_files.fasta int=t local=f nodisk vslow k=8 maxindel=200 minratio=0.1 mappedonly out=/data/DemoData/MyMultipleExperiments/BatchExperiment1/analysis_paired/mapped.bam scafstats=/data/DemoData/MyMultipleExperiments/BatchExperiment1/analysis_paired/analysis/coverage.tsv
+Executing jgi.BBDuk [-Xmx16g, in1=/data/DemoData/MyMultipleExperiments/BatchExperiment1/analysis_paired/R1.fq.gz, in2=/data/DemoData/MyMultipleExperiments/BatchExperiment1/analysis_paired/R2.fq.gz, samplerate=1.0, out=stdout.fq, t=4]
+Version 38.99
+
+Set threads to 4
+Executing align2.BBMap [tipsearch=150, minhits=1, minratio=0.25, rescuemismatches=50, rescuedist=3000, build=1, overwrite=true, fastareadlen=500, -Xmx16g, in=stdin.fq, t=4, ref=/data/DemoData/MyMultipleExperiments/BatchExperiment1/analysis_paired/design_files.fasta, int=t, local=f, nodisk, k=8, maxindel=200, minratio=0.1, mappedonly, out=/data/DemoData/MyMultipleExperiments/BatchExperiment1/analysis_paired/mapped.bam, scafstats=/data/DemoData/MyMultipleExperiments/BatchExperiment1/analysis_paired/analysis/coverage.tsv]
+Version 38.99
+
+Set MINIMUM_ALIGNMENT_SCORE_RATIO to 0.250
+Set threads to 4
+Set INTERLEAVED to true
+Set MINIMUM_ALIGNMENT_SCORE_RATIO to 0.100
+Set OUTPUT_MAPPED_ONLY to true
+Scaffold statistics will be written to /data/DemoData/MyMultipleExperiments/BatchExperiment1/analysis_paired/analysis/coverage.tsv
+Retaining first best site only for ambiguous mappings.
+Executing dna.FastaToChromArrays2 [/data/DemoData/MyMultipleExperiments/BatchExperiment1/analysis_paired/design_files.fasta, 1, writeinthread=false, genscaffoldinfo=true, retain, waitforwriting=false, gz=true, maxlen=536670912, writechroms=false, minscaf=1, midpad=300, startpad=8000, stoppad=8000, nodisk=true]
+
+Set genScaffoldInfo=true
+0.009 seconds.
+Initial:
+Memory: max=17179m, total=17179m, free=17140m, used=39m
+
+Input is being processed as paired
+Started output streams:	0.013 seconds.
+Set genome to 1
+
+Loaded Reference:	0.002 seconds.
+Loading index for chunk 1-1, build 1
+Indexing threads started for block 0-1
+Indexing threads finished for block 0-1
+Generated Index:	0.033 seconds.
+Analyzed Index:   	0.007 seconds.
+Could not find samtools.
+Started output stream:	0.014 seconds.
+Creating scaffold statistics table:   	0.001 seconds.
+Cleared Memory:    	0.128 seconds.
+Processing reads in paired-ended mode.
+Started read stream.
+Started 4 mapping threads.
+Processing time:   		3.078 seconds.
+
+Input:                  	60000 reads 		9000000 bases.
+Total Removed:          	0 reads (0.00%) 	0 bases (0.00%)
+Result:                 	60000 reads (100.00%) 	9000000 bases (100.00%)
+
+Time:                         	3.092 seconds.
+Reads Processed:       60000 	19.41k reads/sec
+Bases Processed:       9000k 	2.91m bases/sec
+Detecting finished threads: 0, 1, 2, 3
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	200
+Minimum Score Ratio:  	0.1
+Mapping Mode:         	normal
+Reads Used:           	60000	(9000000 bases)
+
+Mapping:          	3.150 seconds.
+Reads/sec:       	19046.36
+kBases/sec:      	2856.95
+
+
+Pairing data:   	pct pairs	num pairs 	pct bases	   num bases
+
+mated pairs:     	 97.8233% 	    29347 	 97.8233% 	     8804100
+bad pairs:       	  0.0000% 	        0 	  0.0000% 	           0
+insert size avg: 	  193.01
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 97.8267% 	    29348 	 97.8267% 	     4402200
+unambiguous:     	 97.8267% 	    29348 	 97.8267% 	     4402200
+ambiguous:       	  0.0000% 	        0 	  0.0000% 	           0
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.0000% 	        0 	  0.0000% 	           0
+semiperfect site:	 61.7967% 	    18539 	 61.7967% 	     2780850
+rescued:         	  0.8100% 	      243
+
+Match Rate:      	      NA 	       NA 	 71.6543% 	     3155391
+Error Rate:      	 36.8304% 	    10809 	  0.3205% 	       14112
+Sub Rate:        	 34.7519% 	    10199 	  0.2878% 	       12675
+Del Rate:        	  3.1586% 	      927 	  0.0324% 	        1428
+Ins Rate:        	  0.0102% 	        3 	  0.0002% 	           9
+N Rate:          	100.0000% 	    29348 	 28.0252% 	     1234125
+
+
+Read 2 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 99.9467% 	    29984 	 99.9467% 	     4497600
+unambiguous:     	 99.9467% 	    29984 	 99.9467% 	     4497600
+ambiguous:       	  0.0000% 	        0 	  0.0000% 	           0
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.0000% 	        0 	  0.0000% 	           0
+semiperfect site:	 55.1400% 	    16542 	 55.1400% 	     2481300
+rescued:         	  5.4067% 	     1622
+
+Match Rate:      	      NA 	       NA 	 71.5631% 	     3219656
+Error Rate:      	 44.8306% 	    13442 	  0.4113% 	       18505
+Sub Rate:        	 42.9863% 	    12889 	  0.3792% 	       17059
+Del Rate:        	  3.1517% 	      945 	  0.0321% 	        1446
+Ins Rate:        	  0.0000% 	        0 	  0.0000% 	           0
+N Rate:          	100.0000% 	    29984 	 28.0256% 	     1260885
+
+Total time:     	3.467 seconds.

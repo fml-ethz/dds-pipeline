@@ -1,0 +1,83 @@
+java -ea -Xmx16g -Xms16g -cp /root/.local/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 -Xmx16g in=stdin.fq t=4 ref=/data/DemoData/MySingleExperiment/analysis_clustered/design_files.fasta int=f local=f nodisk vslow k=8 maxindel=200 minratio=0.1 mappedonly out=/data/DemoData/MySingleExperiment/analysis_clustered/mapped.bam scafstats=/data/DemoData/MySingleExperiment/analysis_clustered/analysis/coverage.tsv
+java -ea -Xmx16g -Xms16g -cp /root/.local/bin/bbmap/current/ jgi.BBDuk -Xmx16g in1=/data/DemoData/MySingleExperiment/analysis_clustered/R1.fq.gz samplerate=1.0 out=stdout.fq t=4
+Executing jgi.BBDuk [-Xmx16g, in1=/data/DemoData/MySingleExperiment/analysis_clustered/R1.fq.gz, samplerate=1.0, out=stdout.fq, t=4]
+Version 38.99
+
+Set threads to 4
+Executing align2.BBMap [tipsearch=150, minhits=1, minratio=0.25, rescuemismatches=50, rescuedist=3000, build=1, overwrite=true, fastareadlen=500, -Xmx16g, in=stdin.fq, t=4, ref=/data/DemoData/MySingleExperiment/analysis_clustered/design_files.fasta, int=f, local=f, nodisk, k=8, maxindel=200, minratio=0.1, mappedonly, out=/data/DemoData/MySingleExperiment/analysis_clustered/mapped.bam, scafstats=/data/DemoData/MySingleExperiment/analysis_clustered/analysis/coverage.tsv]
+Version 38.99
+
+Set MINIMUM_ALIGNMENT_SCORE_RATIO to 0.250
+Set threads to 4
+Set INTERLEAVED to false
+Set MINIMUM_ALIGNMENT_SCORE_RATIO to 0.100
+Set OUTPUT_MAPPED_ONLY to true
+Scaffold statistics will be written to /data/DemoData/MySingleExperiment/analysis_clustered/analysis/coverage.tsv
+Retaining first best site only for ambiguous mappings.
+0.008 seconds.
+Initial:
+Memory: max=17179m, total=17179m, free=17142m, used=37m
+
+Executing dna.FastaToChromArrays2 [/data/DemoData/MySingleExperiment/analysis_clustered/design_files.fasta, 1, writeinthread=false, genscaffoldinfo=true, retain, waitforwriting=false, gz=true, maxlen=536670912, writechroms=false, minscaf=1, midpad=300, startpad=8000, stoppad=8000, nodisk=true]
+
+Set genScaffoldInfo=true
+Input is being processed as unpaired
+Started output streams:	0.008 seconds.
+Set genome to 1
+
+Loaded Reference:	0.002 seconds.
+Loading index for chunk 1-1, build 1
+Indexing threads started for block 0-1
+Indexing threads finished for block 0-1
+Generated Index:	0.035 seconds.
+Analyzed Index:   	0.007 seconds.
+Could not find samtools.
+Started output stream:	0.014 seconds.
+Creating scaffold statistics table:   	0.001 seconds.
+Cleared Memory:    	0.132 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 4 mapping threads.
+Processing time:   		0.296 seconds.
+
+Input:                  	997 reads 		107676 bases.
+Total Removed:          	0 reads (0.00%) 	0 bases (0.00%)
+Result:                 	997 reads (100.00%) 	107676 bases (100.00%)
+
+Time:                         	0.305 seconds.
+Reads Processed:         997 	3.27k reads/sec
+Bases Processed:        107k 	0.35m bases/sec
+Detecting finished threads: 0, 1, 2, 3
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	200
+Minimum Score Ratio:  	0.1
+Mapping Mode:         	normal
+Reads Used:           	997	(107676 bases)
+
+Mapping:          	0.156 seconds.
+Reads/sec:       	6381.05
+kBases/sec:      	689.15
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	100.0000% 	      997 	100.0000% 	      107676
+unambiguous:     	100.0000% 	      997 	100.0000% 	      107676
+ambiguous:       	  0.0000% 	        0 	  0.0000% 	           0
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	 98.7964% 	      985 	 98.7964% 	      106380
+semiperfect site:	 98.7964% 	      985 	 98.7964% 	      106380
+
+Match Rate:      	      NA 	       NA 	 99.9870% 	      107662
+Error Rate:      	  1.2036% 	       12 	  0.0130% 	          14
+Sub Rate:        	  1.2036% 	       12 	  0.0130% 	          14
+Del Rate:        	  0.0000% 	        0 	  0.0000% 	           0
+Ins Rate:        	  0.0000% 	        0 	  0.0000% 	           0
+N Rate:          	  0.0000% 	        0 	  0.0000% 	           0
+
+Total time:     	0.484 seconds.
